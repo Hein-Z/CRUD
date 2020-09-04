@@ -1,34 +1,7 @@
 <?php
 require('config.php');
-if (!empty($_POST)) {
-
-    $targetFile = 'img/' . ($_FILES['image']['name']);
-    $imageType = pathinfo($targetFile, PATHINFO_EXTENSION);
-
-    if ($imageType != 'png' && $imageType != 'jpg' && $imageType != 'jpeg') {
-        echo "<script>alert('Image must be jpg, png or jpeg')</script>";
-    } else {
-        move_uploaded_file($_FILES['image']['tmp_name'], $targetFile);
-        print_r($_POST['created_at']);
-        if ($_POST['created_at']) {
-            $sql = "INSERT INTO post(title,description,image,created_at) VALUES(:title,:description,:image,:created_at)";
-            $pdo_statement = $pdo->prepare($sql);
-            $result = $pdo_statement->execute(
-                array(':title' => $_POST['title'], ':description' => $_POST['description'], ':image' => $_FILES['image']['name'], ':created_at' => $_POST['created_at']));
-        } else {
-            $sql = "INSERT INTO post(title,description,image) VALUES(:title,:description,:image)";
-            $pdo_statement = $pdo->prepare($sql);
-            $result = $pdo_statement->execute(
-                array(':title' => $_POST['title'], ':description' => $_POST['description'], ':image' => $_FILES['image']['name']));
-        }
-    }
-
-
-    if ($result) {
-        echo "<script>alert('record is added');
-       window.location.href='index.php';</script>";
-    }
-}
+$pdo=new dataBase();
+$pdo->add($_POST,$_FILES);
 ?>
 
 

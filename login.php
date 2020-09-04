@@ -1,28 +1,7 @@
 <?php
 require 'config.php';
-if (!empty($_POST)) {
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-    $sql = 'SELECT * FROM users WHERE email=:email';
-    $stml = $pdo->prepare($sql);
-    $stml->bindValue(':email', $email);
-    $stml->execute();
-    $user = $stml->fetch(PDO::FETCH_ASSOC);
-    if (empty($user)) {
-        echo "<script>alert('Incorrect credentials, Try again')</script>";
-    } else {
-        $validPassword = password_verify($password, $user['password']);
-        if ($validPassword) {
-            session_start();
-            $_SESSION['user_id'] = $user['id'];
-            $_SESSION['logged_in'] = time();
-            header('Location: index.php');
-            exist();
-        } else {
-            echo "<script>alert('Incorrect credentials, Try again');</script>";
-        }
-    }
-}
+$pdo=new dataBase();
+$pdo->login($_POST);
 ?>
 
 <!DOCTYPE html>

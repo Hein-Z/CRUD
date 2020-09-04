@@ -1,40 +1,9 @@
 <?php
 require('config.php');
-if (!empty($_POST)) {
+$pdo = new dataBase();
+$pdo->edit($_POST,$_FILES);
 
-    $title = $_POST['title'];
-    $description = $_POST['description'];
-    $created_at = $_POST['created_at'];
-    $id = $_GET['id'];
-
-    if (!empty($_FILES['image']['name'])) {
-        $targetFile = 'img/' . ($_FILES['image']['name']);
-        $imageName = $_FILES['image']['name'];
-        $imageType = pathinfo($targetFile, PATHINFO_EXTENSION);
-
-        if ($imageType != 'png' && $imageType != 'jpg' && $imageType != 'jpeg') {
-            echo "<script>alert('Image must be jpg, png or jpeg')</script>";
-        } else {
-            move_uploaded_file($_FILES['image']['tmp_name'], $targetFile);
-            $pdo_statement = $pdo->prepare("UPDATE post SET id='$id',title='$title',description='$description',image='$imageName',created_at='$created_at' WHERE id='$id'");
-            $result = $pdo_statement->execute();
-        }
-    } else {
-        $pdo_statement = $pdo->prepare("UPDATE post SET id='$id',title='$title',description='$description',created_at='$created_at' WHERE id='$id'");
-        $result = $pdo_statement->execute();
-    }
-    if ($result) {
-        echo "<script>
-    alert('Record is edited');
-    window.location.href='index.php'</script>";
-    }
-}
-
-$pdo_statement = $pdo->prepare("SELECT * FROM post WHERE id=" . $_GET['id']);
-$pdo_statement->execute();
-$result = $pdo_statement->fetchAll();
-// print "<pre>";
-// print_r($result);
+$result = $pdo->getDataByID($_GET['id']);
 ?>
 
 

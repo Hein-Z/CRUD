@@ -1,36 +1,7 @@
 <?php
 require 'config.php';
-if (!empty($_POST)) {
-    $username = $_POST['username'];
-    $email = $_POST['email'];
-    $password = $_POST['password'];
-
-    if ($username == '' || $email == '' || $password == '') {
-        echo '<script>
-        alert("Fill the form data");
-        </script>';
-    } else {
-        $sql = 'SELECT COUNT(email) as num FROM users WHERE email=:email';
-        $stml = $pdo->prepare($sql);
-        $stml->bindValue(':email', $email);
-        $stml->execute();
-        $row = $stml->fetch(PDO::FETCH_ASSOC);
-        if ($row['num'] > 0) {
-            echo '<script>alert("This user already exists");</script>';
-        } else {
-            $passwordhash = password_hash($password, PASSWORD_BCRYPT);
-            $sql = 'INSERT INTO users(name,email,password) VALUES (:name,:email,:password)';
-            $stml = $pdo->prepare($sql);
-            $stml->bindValue(':name', $username);
-            $stml->bindValue(':email', $email);
-            $stml->bindValue(':password', $passwordhash);
-            $result = $stml->execute();
-            if ($result) {
-                echo 'Thank for your registration!' . '<a href="login.php">Login</a>';
-            }
-        }
-    }
-}
+$pdo=new dataBase();
+$pdo->register($_POST);
 ?>
 
 <!DOCTYPE html>
