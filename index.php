@@ -22,7 +22,7 @@ if (empty($_SESSION['user_id']) || empty($_SESSION['logged_in'])) {
 <?php
 $result=$pdo->getData();
 ?>
-<h1 class='text-center'>Post Management</h1>
+<h1 class='text-center'>Posts Management</h1>
 <a class='btn btn-outline-dark' href='add.php'>Created New</a>
 <a class='btn btn-dark float-right' href='logout.php'>Log Out</a>
 <table class="table table-striped table-dark mt-2">
