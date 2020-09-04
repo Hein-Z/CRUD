@@ -1,12 +1,10 @@
 <?php
 session_start();
 require('config.php');
+$pdo = new dataBase();
+
 if (empty($_SESSION['user_id']) || empty($_SESSION['logged_in'])) {
-    echo "
-<script>
-alert('Please Login to continue');
-window.location.href='login.php';
-</script>";
+    echo "<script>alert('Please Login to continue');window.location.href='login.php';</script>";
 }
 ?>
 <!DOCTYPE html>
@@ -22,10 +20,7 @@ window.location.href='login.php';
 
 <body>
 <?php
-$pdo_statement = $pdo->prepare('SELECT * FROM post ORDER BY id DESC');
-$pdo_statement->execute();
-$result = $pdo_statement->fetchAll();
-
+$result=$pdo->getData();
 ?>
 <h1 class='text-center'>Post Management</h1>
 <a class='btn btn-outline-dark' href='add.php'>Created New</a>
@@ -41,8 +36,8 @@ $result = $pdo_statement->fetchAll();
     </thead>
     <tbody>
     <?php
-    if ($result) {
-        foreach ($result as $value) {
+    if ($result) :
+        foreach ($result as $value) :
 
             ?>
             <tr>
@@ -54,8 +49,8 @@ $result = $pdo_statement->fetchAll();
 
             </tr>
             <?php
-        }
-    }
+        endforeach;
+    endif;
     ?>
     </tbody>
 </table>
