@@ -1,6 +1,6 @@
 <?php
 require 'config.php';
-$pdo=new dataBase();
+$pdo = new user();
 $pdo->register($_POST);
 ?>
 

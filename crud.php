@@ -18,7 +18,7 @@ class dataBase
             MYSQL_USER, MYSQL_PASSWORD,
             $pdoOptions
         );
-        return self::$pdo;
+
     }
 
     public function add($add, $image)
@@ -105,6 +105,9 @@ class dataBase
         return $pdo_statement->fetchAll();
     }
 
+
+}
+class user extends dataBase{
     public function login($data)
     {
 
@@ -168,5 +171,6 @@ class dataBase
     }
 
 }
+
 
 ?>
