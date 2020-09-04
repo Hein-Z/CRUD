@@ -19,8 +19,8 @@
     <select />
   </component>
   <component name="ChangeListManager">
-    <list default="true" id="8a95feed-d43d-417a-8077-8e2d36a6d4be" name="Default Changelist" comment="">
-      <change beforePath="$PROJECT_DIR$/index.php" beforeDir="false" afterPath="$PROJECT_DIR$/index.php" afterDir="false" />
+    <list default="true" id="4da02c79-ae64-4fce-b58c-278bd8c064fe" name="Default Changelist" comment="">
+      <change beforePath="$PROJECT_DIR$/.idea/workspace.xml" beforeDir="false" afterPath="$PROJECT_DIR$/.idea/workspace.xml" afterDir="false" />
     </list>
     <option name="SHOW_DIALOG" value="false" />
     <option name="HIGHLIGHT_CONFLICTS" value="true" />
@@ -43,6 +43,15 @@
     <property name="WebServerToolWindowFactoryState" value="false" />
     <property name="last_opened_file_path" value="$PROJECT_DIR$" />
     <property name="vue.rearranger.settings.migration" value="true" />
+  </component>
+  <component name="RunAnythingCache">
+    <option name="myCommands">
+      <command value="cd img" />
+      <command value="ls" />
+      <command value="git pull origin" />
+      <command value="git add ." />
+      <command value="git pull" />
+    </option>
   </component>
   <component name="SpellCheckerSettings" RuntimeDictionaries="0" Folders="0" CustomDictionaries="0" DefaultDictionary="application-level" UseSingleDictionary="true" transferred="true" />
   <component name="TaskManager">
@@ -70,8 +79,25 @@
         </entry>
       </map>
     </option>
+    <option name="oldMeFiltersMigrated" value="true" />
   </component>
   <component name="WindowStateProjectService">
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom" timestamp="1599245171053">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.bottom/0.0.1366.768@0.0.1366.768" timestamp="1599245171053" />
+    <state width="1323" height="192" key="GridCell.Tab.0.center" timestamp="1599245171053">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.center/0.0.1366.768@0.0.1366.768" timestamp="1599245171053" />
+    <state width="1323" height="192" key="GridCell.Tab.0.left" timestamp="1599245171053">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.left/0.0.1366.768@0.0.1366.768" timestamp="1599245171053" />
+    <state width="1323" height="192" key="GridCell.Tab.0.right" timestamp="1599245171053">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state width="1323" height="192" key="GridCell.Tab.0.right/0.0.1366.768@0.0.1366.768" timestamp="1599245171053" />
     <state x="517" y="307" key="NewPhpFileDialog" timestamp="1599203091258">
       <screen x="0" y="0" width="1366" height="768" />
     </state>
@@ -80,6 +106,10 @@
       <screen x="0" y="0" width="1366" height="768" />
     </state>
     <state x="275" y="116" key="Vcs.Push.Dialog.v2/0.0.1366.768@0.0.1366.768" timestamp="1599244123153" />
+    <state x="339" y="172" width="672" height="677" key="run.anything.popup" timestamp="1599245106330">
+      <screen x="0" y="0" width="1366" height="768" />
+    </state>
+    <state x="339" y="172" width="672" height="677" key="run.anything.popup/0.0.1366.768@0.0.1366.768" timestamp="1599245106330" />
     <state x="346" y="89" key="search.everywhere.popup" timestamp="1599204019281">
       <screen x="0" y="0" width="1366" height="768" />
     </state>

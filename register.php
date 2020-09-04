@@ -1,5 +1,5 @@
 <?php
-require 'config.php';
+require 'crud.php';
 $pdo = new user();
 $pdo->register($_POST);
 ?>

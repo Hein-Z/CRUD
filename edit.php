@@ -1,5 +1,5 @@
 <?php
-require('config.php');
+require('crud.php');
 $pdo = new dataBase();
 $pdo->edit($_POST,$_FILES);
 
